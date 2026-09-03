@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  @apply bg-offwhite text-navy-900 font-body antialiased;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  @apply bg-gold-200 text-navy-900;
+}
+
+/* visible focus ring for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #C8A24D;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #E6CD8E 0%, #C8A24D 60%, #A9853B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gold {
+  @apply relative overflow-hidden rounded-full bg-gold-gradient px-7 py-3.5 font-body font-semibold text-navy-900 shadow-gold transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98];
+}
+
+.btn-outline {
+  @apply rounded-full border border-white/40 px-7 py-3.5 font-body font-semibold text-white transition-colors duration-300 hover:bg-white/10;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+.section {
+  @apply py-16 sm:py-24;
+}
+
+.eyebrow {
+  @apply mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-gold-600;
+}
